@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Gorilla Setups</title>
+</head>
+<body>
+    <div class="card">
+        <div class="status-badge">Sistema de Monitoreo MVVM</div>
+        <h1>Estado: <span id="estado-texto" class="highlight"></span></h1>
+        
+        <h3>Artículos en el carrito:</h3>
+        <div id="lista-productos">
+            </div>
+
+        <div class="controles">
+            <select id="select-pago">
+                <option value="normal">Seleccionar Pago</option>
+                <option value="transferencia">Transferencia (-10%)</option>
+                <option value="tarjeta">Tarjeta (+5%)</option>
+            </select>
+            <h2 class="total-texto">Total: <span id="total-monto" class="highlight"></span></h2>
+        </div>
+
+        <button id="btn-confirmar" class="btn-main">CONFIRMAR TRANSACCIÓN</button>
+    </div>
+
+    <script type="module">
+        import { PedidoViewModel } from './src/viewmodel/PedidoViewModel.js';
+        const vm = new PedidoViewModel();
+        
+        vm.render(); // Primera carga
+
+        document.getElementById('select-pago').onchange = (e) => vm.setMetodoPago(e.target.value);
+        document.getElementById('btn-confirmar').onclick = () => vm.confirmarPedido();
+    </script>
+</body>
+</html>
