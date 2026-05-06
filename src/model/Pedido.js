@@ -11,13 +11,13 @@ export class Pedido {
                 nombre: "Teclado Mecánico RGB", 
                 precio: 125.50, 
                 // Imagen temporal para que no salga error
-                img: "https://cdn-icons-png.flaticon.com/512/808/808477.png" 
+                img: "./src/assets/teclado.jpg" 
             },
             { 
-                nombre: "Mouse Gamer inalámbrico (x2)", 
+                nombre: "Mouse Gamer inalámbrico", 
                 precio: 118.00, 
                 // Imagen temporal para que no salga error
-                img: "https://cdn-icons-png.flaticon.com/512/689/689304.png" 
+                img: "./src/assets/mouse.webp" 
             }
         ];
         this.estado = "PREPARANDO ENVÍO";
